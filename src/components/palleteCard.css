@@ -1,0 +1,27 @@
+.card {
+    background-color: antiquewhite;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 30px 10px;
+}
+
+.color-box {
+    width: 80%;
+    height: 200px;
+    margin: auto;
+    border: 1px solid black;
+}
+
+.grid {
+    padding-top: 20px;
+    display: grid;
+    grid-template-columns: 20% 20% 20% 20%;
+    gap: 50px;
+    justify-content: center;
+    padding-bottom: 10rem;
+}
+
+h1 {
+    text-align: center;
+}

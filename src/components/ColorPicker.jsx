@@ -13,12 +13,15 @@ export default function ColorPicker() {
 
   return (
     <>
-      <div className="grid">
+      <div className="container">
         <div>
           <input
             type="color"
             value={color}
-            onChange={(e) => setColor(e.target.value)}
+            onChange={function(e) {
+              setColor(e.target.value) 
+              document.getElementById('hex-input').value = color}
+            }
             className="box"
             name="color-box"
             id="color-box"
@@ -30,14 +33,22 @@ export default function ColorPicker() {
 
         <div>
           <form>
-            <label for="hex-input">Hex code: </label>
+            <label htmlFor="hex-input">Hex code: </label>
             <input
               type="text"
-              onChange={(e) => setColor("#" + e.target.value)}
+              onChange={function(e) {
+                if (Array.from(e.target.value)[0] === "#") {
+                  let x = e.target.value
+                  x.substring(0)
+                  setColor(e.target.value)
+                } else {
+                  setColor("#" + e.target.value)
+                }
+              }}
               name="hex-input"
               id="hex-input"
             /><br/><br/>
-            <label for="title">Title: </label>
+            <label htmlFor="title">Name: </label>
             <input
               type="text"
               name="title"
@@ -45,7 +56,7 @@ export default function ColorPicker() {
             />
           </form>
           <br />
-          <button className="save-btn">
+          <button type="submit" className="save-btn">
             <BsBookmarkHeart /> Save
           </button>
         </div>
