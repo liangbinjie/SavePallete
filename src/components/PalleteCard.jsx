@@ -5,6 +5,7 @@ export function PalleteCard({ color }) {
         <>
         <div className="card">
             <div className="color-box" style={{backgroundColor: color.hex}}></div>
+            <h6>{color.hex}</h6>
             <h6>{color.name}</h6>
         </div>
         </>
