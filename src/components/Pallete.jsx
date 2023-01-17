@@ -12,7 +12,7 @@ export function Pallete() {
 
   if (colors.length === 0) {
     return <h1>You don't have any saved color</h1>;
-  } Msalsa 
+  }
 
   return (
     <>
