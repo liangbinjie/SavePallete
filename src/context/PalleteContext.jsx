@@ -32,11 +32,18 @@ export function PalleteContextProvider(props) {
     setColors(localStorage.colors);
   }
 
+  function deleteCard(id) {
+    const current = JSON.parse(localStorage.colors)
+    localStorage.setItem("colors", JSON.stringify(current.filter(color => color.id != id)))
+    setColors(localStorage.colors)
+  }
+
   return (
     <PalleteContext.Provider
       value={{
         colors,
         createPallete,
+        deleteCard
       }}
     >
       {props.children}
